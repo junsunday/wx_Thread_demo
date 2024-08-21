@@ -119,7 +119,7 @@ void Opencvframe::control()
 			mutex_frame.lock();//保护frameSeq
 			mutex_process.lock();//保护frame
 			srcImg = frameSeq.back();//队列中读数据
-			sprintf(temp, "frame:%05d", i++);//计数
+			sprintf(temp, "frame:%d", i++);//计数
 			mutex_process.unlock();
 			cond_process.notify_all();//激活所有处理线程
 			
